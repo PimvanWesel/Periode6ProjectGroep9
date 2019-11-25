@@ -4,31 +4,70 @@ using UnityEngine;
 
 public class GameManagerRike : MonoBehaviour
 {
+    private GameObject player1;
+    private GameObject player2;
+    private GameObject player3;
+    private GameObject player4;
+    private TouchPhase phase;
+
+    private void Start()
+    {
+        player1 = GameObject.Find("Player 1");
+        player2 = GameObject.Find("Player 2");
+        player3 = GameObject.Find("Player 3");
+        player4 = GameObject.Find("Player 4");
+    }
+
     private void Update()
     {
         for (int i = 0; i < Input.touchCount; i++)
         {
-            //Vector3 touchPosition = Camera.main.ScreenToWorldPoint(Input.touches[i].position);
-
+            //foreach (Touch touch in Input.touches)
+            //{
             Ray raycast = Camera.main.ScreenPointToRay(Input.touches[i].position);
             RaycastHit raycastHit;
+
             if (Physics.Raycast(raycast, out raycastHit))
             {
                 if (raycastHit.collider.name == "Player 1")
                 {
+                    player1.transform.GetChild(0).gameObject.SetActive(true);
                     Debug.Log("button 1 clicked");
+                }
+                else
+                {
+                    player1.transform.GetChild(0).gameObject.SetActive(false);
+                    Debug.Log("button 1 released");
                 }
                 if (raycastHit.collider.name == "Player 2")
                 {
                     Debug.Log("button 2 clicked");
+                    player2.GetComponent<Renderer>().material.color = Color.black;
+                }
+                else
+                {
+                    Debug.Log("button 2 released");
+                    player2.GetComponent<Renderer>().material.color = Color.yellow;
                 }
                 if (raycastHit.collider.name == "Player 3")
                 {
                     Debug.Log("button 3 clicked");
+                    player3.GetComponent<Renderer>().material.color = Color.black;
+                }
+                else
+                {
+                    Debug.Log("button 3 released");
+                    player3.GetComponent<Renderer>().material.color = Color.yellow;
                 }
                 if (raycastHit.collider.name == "Player 4")
                 {
                     Debug.Log("button 4 clicked");
+                    player4.GetComponent<Renderer>().material.color = Color.black;
+                }
+                else
+                {
+                    Debug.Log("button 4 Released");
+                    player4.GetComponent<Renderer>().material.color = Color.yellow;
                 }
             }
         }

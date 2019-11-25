@@ -1,45 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
 
-public class Players : MonoBehaviour
+public class GameManagerRike : MonoBehaviour
 {
-    [SerializeField] private Text player1, player2, player3, player4;
-    private int money;
-
-    private void Start()
-    {
-    }
-
     private void Update()
-    {
-        HandleTouches();
-
-        //if (name == "Player 1")
-        //{
-        //    money += 1;
-        //    player1.text = "Geld: " + money;
-        //}
-
-        //if (name == "Player 2")
-        //{
-        //    money += 1;
-        //    player2.text = "Geld: " + money;
-        //}
-        //if (name == "Player 3")
-        //{
-        //    money += 1;
-        //    player3.text = "Geld: " + money;
-        //}
-        //if (name == "Player 4")
-        //{
-        //    money += 1;
-        //    player4.text = "Geld: " + money;
-        //}
-    }
-
-    private void HandleTouches()
     {
         for (int i = 0; i < Input.touchCount; i++)
         {
@@ -59,11 +24,11 @@ public class Players : MonoBehaviour
                 }
                 if (raycastHit.collider.name == "Player 3")
                 {
-                    Debug.Log("button 2 clicked");
+                    Debug.Log("button 3 clicked");
                 }
                 if (raycastHit.collider.name == "Player 4")
                 {
-                    Debug.Log("button 2 clicked");
+                    Debug.Log("button 4 clicked");
                 }
             }
         }

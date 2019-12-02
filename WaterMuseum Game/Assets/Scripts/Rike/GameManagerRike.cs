@@ -27,57 +27,78 @@ public class GameManagerRike : MonoBehaviour
     {
         //for (int i = 0; i < Input.touchCount; i++)
         //{
-        //    //foreach (Touch touch in Input.touches)
-        //    //{
+        //foreach (Touch touch in Input.touches)
+        //{
         //    Ray raycast = Camera.main.ScreenPointToRay(Input.touches[i].position);
         //    RaycastHit raycastHit;
 
-        //    if (Physics.Raycast(raycast, out raycastHit))
+        //    if (phase != TouchPhase.Stationary)
         //    {
-        //        if (raycastHit.collider.name == "Player 1")
+        //        if (Physics.Raycast(raycast, out raycastHit))
         //        {
-        //            player1.transform.GetChild(0).gameObject.SetActive(true);
-        //            Debug.Log("button 1 clicked");
-        //        }
-        //        else
-        //        {
-        //            player1.transform.GetChild(0).gameObject.SetActive(false);
-        //            Debug.Log("button 1 released");
-        //        }
-        //        if (raycastHit.collider.name == "Player 2")
-        //        {
-        //            Debug.Log("button 2 clicked");
-        //            player2.GetComponent<Renderer>().material.color = Color.black;
-        //        }
-        //        else
-        //        {
-        //            Debug.Log("button 2 released");
-        //            player2.GetComponent<Renderer>().material.color = Color.yellow;
-        //        }
-        //        if (raycastHit.collider.name == "Player 3")
-        //        {
-        //            Debug.Log("button 3 clicked");
-        //            player3.GetComponent<Renderer>().material.color = Color.black;
-        //        }
-        //        else
-        //        {
-        //            Debug.Log("button 3 released");
-        //            player3.GetComponent<Renderer>().material.color = Color.yellow;
-        //        }
-        //        if (raycastHit.collider.name == "Player 4")
-        //        {
-        //            Debug.Log("button 4 clicked");
-        //            player4.GetComponent<Renderer>().material.color = Color.black;
-        //        }
-        //        else
-        //        {
-        //            Debug.Log("button 4 Released");
-        //            player4.GetComponent<Renderer>().material.color = Color.yellow;
+        //            if (raycastHit.collider.name == "Player 1")
+        //            {
+        //                if (onPlayer1 == true)
+        //                {
+        //                    player1.transform.GetChild(0).gameObject.SetActive(false);
+        //                    onPlayer1 = false;
+        //                }
+        //                else
+        //                {
+        //                    player1.transform.GetChild(0).gameObject.SetActive(true);
+
+        //                    onPlayer1 = true;
+        //                }
+        //            }
+
+        //            if (raycastHit.collider.name == "Player 2")
+        //            {
+        //                if (onPlayer2 == true)
+        //                {
+        //                    player2.transform.GetChild(0).gameObject.SetActive(false);
+        //                    onPlayer2 = false;
+        //                }
+        //                else
+        //                {
+        //                    player2.transform.GetChild(0).gameObject.SetActive(true);
+
+        //                    onPlayer2 = true;
+        //                }
+        //            }
+
+        //            if (raycastHit.collider.name == "Player 3")
+        //            {
+        //                if (onPlayer3 == true)
+        //                {
+        //                    player3.transform.GetChild(0).gameObject.SetActive(false);
+        //                    onPlayer3 = false;
+        //                }
+        //                else
+        //                {
+        //                    player3.transform.GetChild(0).gameObject.SetActive(true);
+
+        //                    onPlayer3 = true;
+        //                }
+        //            }
+
+        //            if (raycastHit.collider.name == "Player 4")
+        //            {
+        //                if (onPlayer4 == true)
+        //                {
+        //                    player4.transform.GetChild(0).gameObject.SetActive(false);
+        //                    onPlayer4 = false;
+        //                }
+        //                else
+        //                {
+        //                    player4.transform.GetChild(0).gameObject.SetActive(true);
+
+        //                    onPlayer4 = true;
+        //                }
+        //            }
         //        }
         //    }
         //}
 
-        Debug.LogError(onPlayer1);
         if (Input.GetMouseButtonUp(0))
         {
             Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -98,13 +119,10 @@ public class GameManagerRike : MonoBehaviour
 
                         onPlayer1 = true;
                     }
-
-                    Debug.Log("button 1 clicked");
                 }
 
                 if (raycastHit.collider.name == "Player 2")
                 {
-                    Debug.Log("button 2 clicked");
                     if (onPlayer2 == true)
                     {
                         player2.transform.GetChild(0).gameObject.SetActive(false);
@@ -120,7 +138,6 @@ public class GameManagerRike : MonoBehaviour
 
                 if (raycastHit.collider.name == "Player 3")
                 {
-                    Debug.Log("button 3 clicked");
                     if (onPlayer3 == true)
                     {
                         player3.transform.GetChild(0).gameObject.SetActive(false);
@@ -136,7 +153,6 @@ public class GameManagerRike : MonoBehaviour
 
                 if (raycastHit.collider.name == "Player 4")
                 {
-                    Debug.Log("button 4 clicked");
                     if (onPlayer4 == true)
                     {
                         player4.transform.GetChild(0).gameObject.SetActive(false);

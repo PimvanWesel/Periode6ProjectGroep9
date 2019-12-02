@@ -20,55 +20,109 @@ public class GameManagerRike : MonoBehaviour
 
     private void Update()
     {
-        for (int i = 0; i < Input.touchCount; i++)
-        {
-            //foreach (Touch touch in Input.touches)
-            //{
-            Ray raycast = Camera.main.ScreenPointToRay(Input.touches[i].position);
-            RaycastHit raycastHit;
+        //for (int i = 0; i < Input.touchCount; i++)
+        //{
+        //    //foreach (Touch touch in Input.touches)
+        //    //{
+        //    Ray raycast = Camera.main.ScreenPointToRay(Input.touches[i].position);
+        //    RaycastHit raycastHit;
 
-            if (Physics.Raycast(raycast, out raycastHit))
+        //    if (Physics.Raycast(raycast, out raycastHit))
+        //    {
+        //        if (raycastHit.collider.name == "Player 1")
+        //        {
+        //            player1.transform.GetChild(0).gameObject.SetActive(true);
+        //            Debug.Log("button 1 clicked");
+        //        }
+        //        else
+        //        {
+        //            player1.transform.GetChild(0).gameObject.SetActive(false);
+        //            Debug.Log("button 1 released");
+        //        }
+        //        if (raycastHit.collider.name == "Player 2")
+        //        {
+        //            Debug.Log("button 2 clicked");
+        //            player2.GetComponent<Renderer>().material.color = Color.black;
+        //        }
+        //        else
+        //        {
+        //            Debug.Log("button 2 released");
+        //            player2.GetComponent<Renderer>().material.color = Color.yellow;
+        //        }
+        //        if (raycastHit.collider.name == "Player 3")
+        //        {
+        //            Debug.Log("button 3 clicked");
+        //            player3.GetComponent<Renderer>().material.color = Color.black;
+        //        }
+        //        else
+        //        {
+        //            Debug.Log("button 3 released");
+        //            player3.GetComponent<Renderer>().material.color = Color.yellow;
+        //        }
+        //        if (raycastHit.collider.name == "Player 4")
+        //        {
+        //            Debug.Log("button 4 clicked");
+        //            player4.GetComponent<Renderer>().material.color = Color.black;
+        //        }
+        //        else
+        //        {
+        //            Debug.Log("button 4 Released");
+        //            player4.GetComponent<Renderer>().material.color = Color.yellow;
+        //        }
+        //    }
+        //}
+
+        Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit raycastHit;
+
+        if (Physics.Raycast(raycast, out raycastHit))
+        {
+            if (raycastHit.collider.name == "Player 1")
             {
-                if (raycastHit.collider.name == "Player 1")
-                {
-                    player1.transform.GetChild(0).gameObject.SetActive(true);
-                    Debug.Log("button 1 clicked");
-                }
-                else
-                {
-                    player1.transform.GetChild(0).gameObject.SetActive(false);
-                    Debug.Log("button 1 released");
-                }
-                if (raycastHit.collider.name == "Player 2")
-                {
-                    Debug.Log("button 2 clicked");
-                    player2.GetComponent<Renderer>().material.color = Color.black;
-                }
-                else
-                {
-                    Debug.Log("button 2 released");
-                    player2.GetComponent<Renderer>().material.color = Color.yellow;
-                }
-                if (raycastHit.collider.name == "Player 3")
-                {
-                    Debug.Log("button 3 clicked");
-                    player3.GetComponent<Renderer>().material.color = Color.black;
-                }
-                else
-                {
-                    Debug.Log("button 3 released");
-                    player3.GetComponent<Renderer>().material.color = Color.yellow;
-                }
-                if (raycastHit.collider.name == "Player 4")
-                {
-                    Debug.Log("button 4 clicked");
-                    player4.GetComponent<Renderer>().material.color = Color.black;
-                }
-                else
-                {
-                    Debug.Log("button 4 Released");
-                    player4.GetComponent<Renderer>().material.color = Color.yellow;
-                }
+                player1.transform.GetChild(0).gameObject.SetActive(true);
+                Debug.Log("button 1 clicked");
+            }
+            else
+            {
+                //player1.transform.GetChild(0).gameObject.SetActive(false);
+                Debug.Log("button 1 released");
+            }
+            if (raycastHit.collider.name == "Player 2")
+            {
+                Debug.Log("button 2 clicked");
+                player2.GetComponent<Renderer>().material.color = Color.black;
+                player2.transform.GetChild(0).gameObject.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("button 2 released");
+                player2.GetComponent<Renderer>().material.color = Color.yellow;
+                player2.transform.GetChild(0).gameObject.SetActive(false);
+            }
+
+            if (raycastHit.collider.name == "Player 3")
+            {
+                Debug.Log("button 3 clicked");
+                player3.GetComponent<Renderer>().material.color = Color.black;
+                player3.transform.GetChild(0).gameObject.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("button 3 released");
+                player3.GetComponent<Renderer>().material.color = Color.yellow;
+                player3.transform.GetChild(0).gameObject.SetActive(false);
+            }
+            if (raycastHit.collider.name == "Player 4")
+            {
+                Debug.Log("button 4 clicked");
+                player4.GetComponent<Renderer>().material.color = Color.black;
+                player4.transform.GetChild(0).gameObject.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("button 4 Released");
+                player4.GetComponent<Renderer>().material.color = Color.yellow;
+                player4.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
     }

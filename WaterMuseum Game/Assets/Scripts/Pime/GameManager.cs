@@ -8,6 +8,16 @@ public class GameManager : MonoBehaviour
     public float seconds;
     public float round;
 
+    public int moneyP1;
+    public int moneyP2;
+    public int moneyP3;
+    public int moneyP4;
+
+    public Text amountP1;
+    public Text amountP2;
+    public Text amountP3;
+    public Text amountP4;
+
     public Text sec;
     public Text rounds;
 

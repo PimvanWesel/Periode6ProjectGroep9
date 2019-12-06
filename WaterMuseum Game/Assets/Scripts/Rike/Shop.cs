@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float colora = 1;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        colora -= 0.1f * Time.deltaTime;
+        GetComponent<Renderer>().material.color = new Color(GetComponent<Renderer>().material.color.r, GetComponent<Renderer>().material.color.g, GetComponent<Renderer>().material.color.b, colora);
     }
 }

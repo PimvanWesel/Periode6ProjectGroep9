@@ -54,6 +54,7 @@ public class GameManagerRike : MonoBehaviour
 
             if (Physics.Raycast(raycast, out raycastHit))
             {
+                //Player 1 Touches
                 if (raycastHit.collider.name == "Player 1")
                 {
                     if (onPlayer1 == true)
@@ -68,7 +69,38 @@ public class GameManagerRike : MonoBehaviour
                         onPlayer1 = true;
                     }
                 }
+                if (raycastHit.collider.name == "VangnetPlayer1")
+                {
+                    Instantiate(Vangnet, SpawnsPlayer1.transform.GetChild(0).transform.position, Quaternion.identity);
+                    player1.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer1 = false;
+                }
+                if (raycastHit.collider.name == "BeachCleanupPlayer1")
+                {
+                    Instantiate(Vangnet, SpawnsPlayer1.transform.GetChild(1).transform.position, Quaternion.identity);
+                    player1.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer1 = false;
+                }
+                if (raycastHit.collider.name == "FishingBoatsPlayer1")
+                {
+                    Instantiate(Vangnet, SpawnsPlayer1.transform.GetChild(2).transform.position, Quaternion.identity);
+                    player1.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer1 = false;
+                }
+                if (raycastHit.collider.name == "InterceptorPlayer1")
+                {
+                    Instantiate(Vangnet, SpawnsPlayer1.transform.GetChild(3).transform.position, Quaternion.identity);
+                    player1.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer1 = false;
+                }
+                if (raycastHit.collider.name == "ProjectCleanupPlayer1")
+                {
+                    Instantiate(Vangnet, SpawnsPlayer1.transform.GetChild(4).transform.position, Quaternion.identity);
+                    player1.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer1 = false;
+                }
 
+                //Player 2 Button
                 if (raycastHit.collider.name == "Player 2")
                 {
                     if (onPlayer2 == true)
@@ -112,11 +144,6 @@ public class GameManagerRike : MonoBehaviour
 
                         onPlayer4 = true;
                     }
-                }
-
-                if (raycastHit.collider.name == "WheelPlayer1")
-                {
-                    Instantiate(Vangnet, SpawnsPlayer1.transform.GetChild(0).transform.position, Quaternion.identity);
                 }
             }
         }

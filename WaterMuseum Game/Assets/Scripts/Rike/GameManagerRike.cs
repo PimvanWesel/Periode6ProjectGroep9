@@ -17,6 +17,7 @@ public class GameManagerRike : MonoBehaviour
 
     private TouchPhase phase;
 
+    private bool wheelSelected;
     private bool onPlayer1;
     private bool onPlayer2;
     private bool onPlayer3;

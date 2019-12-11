@@ -4,36 +4,25 @@ using UnityEngine;
 
 public class GameManagerRike : MonoBehaviour
 {
+    public static GameManagerRike Instance;
     [SerializeField] private GameObject Vangnet;
-    private GameObject player1;
-    private GameObject player2;
-    private GameObject player3;
-    private GameObject player4;
-
-    private GameObject SpawnsPlayer1;
-    private GameObject SpawnsPlayer2;
-    private GameObject SpawnsPlayer3;
-    private GameObject SpawnsPlayer4;
+    private GameObject player1, player2, player3, player4;
+    private string selectedObjectPlayer1;
+    public string selectedPadPlayer1, selectedPadPlayer2, selectedPadPlayer3, selectedPadPlayer4;
 
     private TouchPhase phase;
 
     private bool wheelSelected;
-    private bool onPlayer1;
-    private bool onPlayer2;
-    private bool onPlayer3;
-    private bool onPlayer4;
+    private bool onPlayer1, onPlayer2, onPlayer3, onPlayer4;
+    [HideInInspector] public bool ObjectSelectedPlayer1, ObjectSelectedPlayer2, ObjectSelectedPlayer3, ObjectSelectedPlayer4;
 
     private void Start()
     {
+        Instance = this;
         player1 = GameObject.Find("Player 1");
         player2 = GameObject.Find("Player 2");
         player3 = GameObject.Find("Player 3");
         player4 = GameObject.Find("Player 4");
-
-        SpawnsPlayer1 = GameObject.Find("Player 1 ObjectSpawns");
-        SpawnsPlayer2 = GameObject.Find("Player 2 ObjectSpawns");
-        SpawnsPlayer3 = GameObject.Find("Player 3 ObjectSpawns");
-        SpawnsPlayer4 = GameObject.Find("Player 4 ObjectSpawns");
     }
 
     private void Update()
@@ -71,33 +60,45 @@ public class GameManagerRike : MonoBehaviour
                 }
                 if (raycastHit.collider.name == "VangnetPlayer1")
                 {
-                    Instantiate(Vangnet, SpawnsPlayer1.transform.GetChild(0).transform.position, Quaternion.identity);
+                    ObjectSelectedPlayer1 = true;
                     player1.transform.GetChild(0).gameObject.SetActive(false);
                     onPlayer1 = false;
                 }
                 if (raycastHit.collider.name == "BeachCleanupPlayer1")
                 {
-                    Instantiate(Vangnet, SpawnsPlayer1.transform.GetChild(1).transform.position, Quaternion.identity);
+                    ObjectSelectedPlayer1 = true;
                     player1.transform.GetChild(0).gameObject.SetActive(false);
                     onPlayer1 = false;
                 }
                 if (raycastHit.collider.name == "FishingBoatsPlayer1")
                 {
-                    Instantiate(Vangnet, SpawnsPlayer1.transform.GetChild(2).transform.position, Quaternion.identity);
+                    ObjectSelectedPlayer1 = true;
                     player1.transform.GetChild(0).gameObject.SetActive(false);
                     onPlayer1 = false;
                 }
                 if (raycastHit.collider.name == "InterceptorPlayer1")
                 {
-                    Instantiate(Vangnet, SpawnsPlayer1.transform.GetChild(3).transform.position, Quaternion.identity);
+                    ObjectSelectedPlayer1 = true;
                     player1.transform.GetChild(0).gameObject.SetActive(false);
                     onPlayer1 = false;
                 }
                 if (raycastHit.collider.name == "ProjectCleanupPlayer1")
                 {
-                    Instantiate(Vangnet, SpawnsPlayer1.transform.GetChild(4).transform.position, Quaternion.identity);
+                    ObjectSelectedPlayer1 = true;
                     player1.transform.GetChild(0).gameObject.SetActive(false);
                     onPlayer1 = false;
+                }
+                if (ObjectSelectedPlayer1)
+                {
+                    GameObject padPlayer1;
+                    selectedPadPlayer1 = raycastHit.collider.name;
+
+                    if (selectedPadPlayer1.StartsWith("SelectField1"))
+                    {
+                        padPlayer1 = GameObject.Find(selectedPadPlayer1);
+                        Instantiate(Vangnet, padPlayer1.transform.position, Quaternion.identity);
+                        ObjectSelectedPlayer1 = false;
+                    }
                 }
 
                 //Player 2 Button
@@ -115,6 +116,48 @@ public class GameManagerRike : MonoBehaviour
                         onPlayer2 = true;
                     }
                 }
+                if (raycastHit.collider.name == "VangnetPlayer2")
+                {
+                    ObjectSelectedPlayer2 = true;
+                    player2.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer2 = false;
+                }
+                if (raycastHit.collider.name == "BeachCleanupPlayer2")
+                {
+                    ObjectSelectedPlayer2 = true;
+                    player2.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer2 = false;
+                }
+                if (raycastHit.collider.name == "FishingBoatsPlayer2")
+                {
+                    ObjectSelectedPlayer2 = true;
+                    player2.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer2 = false;
+                }
+                if (raycastHit.collider.name == "InterceptorPlayer2")
+                {
+                    ObjectSelectedPlayer2 = true;
+                    player2.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer2 = false;
+                }
+                if (raycastHit.collider.name == "ProjectCleanupPlayer2")
+                {
+                    ObjectSelectedPlayer2 = true;
+                    player2.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer2 = false;
+                }
+                if (ObjectSelectedPlayer2)
+                {
+                    GameObject padPlayer2;
+                    selectedPadPlayer2 = raycastHit.collider.name;
+
+                    if (selectedPadPlayer2.StartsWith("SelectField2"))
+                    {
+                        padPlayer2 = GameObject.Find(selectedPadPlayer2);
+                        Instantiate(Vangnet, padPlayer2.transform.position, Quaternion.identity);
+                        ObjectSelectedPlayer2 = false;
+                    }
+                }
 
                 if (raycastHit.collider.name == "Player 3")
                 {
@@ -130,7 +173,6 @@ public class GameManagerRike : MonoBehaviour
                         onPlayer3 = true;
                     }
                 }
-
                 if (raycastHit.collider.name == "Player 4")
                 {
                     if (onPlayer4 == true)

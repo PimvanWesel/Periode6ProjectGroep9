@@ -8,7 +8,7 @@ public class GameManagerRike : MonoBehaviour
     [SerializeField] private GameObject Vangnet;
     private GameObject player1, player2, player3, player4;
     private string selectedObjectPlayer1;
-    public string selectedPadPlayer1, selectedPadPlayer2, selectedPadPlayer3, selectedPadPlayer4;
+    private string selectedPadPlayer1, selectedPadPlayer2, selectedPadPlayer3, selectedPadPlayer4;
 
     private TouchPhase phase;
 
@@ -101,7 +101,7 @@ public class GameManagerRike : MonoBehaviour
                     }
                 }
 
-                //Player 2 Button
+                //Player 2 Touches
                 if (raycastHit.collider.name == "Player 2")
                 {
                     if (onPlayer2 == true)
@@ -159,6 +159,7 @@ public class GameManagerRike : MonoBehaviour
                     }
                 }
 
+                //Player 3 Touches
                 if (raycastHit.collider.name == "Player 3")
                 {
                     if (onPlayer3 == true)
@@ -173,6 +174,50 @@ public class GameManagerRike : MonoBehaviour
                         onPlayer3 = true;
                     }
                 }
+                if (raycastHit.collider.name == "VangnetPlayer3")
+                {
+                    ObjectSelectedPlayer3 = true;
+                    player3.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer3 = false;
+                }
+                if (raycastHit.collider.name == "BeachCleanupPlayer3")
+                {
+                    ObjectSelectedPlayer3 = true;
+                    player3.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer3 = false;
+                }
+                if (raycastHit.collider.name == "FishingBoatsPlayer3")
+                {
+                    ObjectSelectedPlayer3 = true;
+                    player3.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer3 = false;
+                }
+                if (raycastHit.collider.name == "InterceptorPlayer3")
+                {
+                    ObjectSelectedPlayer3 = true;
+                    player3.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer3 = false;
+                }
+                if (raycastHit.collider.name == "ProjectCleanupPlayer3")
+                {
+                    ObjectSelectedPlayer3 = true;
+                    player3.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer3 = false;
+                }
+                if (ObjectSelectedPlayer3)
+                {
+                    GameObject padPlayer3;
+                    selectedPadPlayer3 = raycastHit.collider.name;
+
+                    if (selectedPadPlayer3.StartsWith("SelectField3"))
+                    {
+                        padPlayer3 = GameObject.Find(selectedPadPlayer3);
+                        Instantiate(Vangnet, padPlayer3.transform.position, Quaternion.identity);
+                        ObjectSelectedPlayer3 = false;
+                    }
+                }
+
+                //Player 4 Touches
                 if (raycastHit.collider.name == "Player 4")
                 {
                     if (onPlayer4 == true)
@@ -185,6 +230,48 @@ public class GameManagerRike : MonoBehaviour
                         player4.transform.GetChild(0).gameObject.SetActive(true);
 
                         onPlayer4 = true;
+                    }
+                }
+                if (raycastHit.collider.name == "VangnetPlayer4")
+                {
+                    ObjectSelectedPlayer4 = true;
+                    player4.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer4 = false;
+                }
+                if (raycastHit.collider.name == "BeachCleanupPlayer4")
+                {
+                    ObjectSelectedPlayer4 = true;
+                    player4.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer4 = false;
+                }
+                if (raycastHit.collider.name == "FishingBoatsPlayer4")
+                {
+                    ObjectSelectedPlayer4 = true;
+                    player4.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer4 = false;
+                }
+                if (raycastHit.collider.name == "InterceptorPlayer4")
+                {
+                    ObjectSelectedPlayer4 = true;
+                    player4.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer4 = false;
+                }
+                if (raycastHit.collider.name == "ProjectCleanupPlayer4")
+                {
+                    ObjectSelectedPlayer4 = true;
+                    player4.transform.GetChild(0).gameObject.SetActive(false);
+                    onPlayer4 = false;
+                }
+                if (ObjectSelectedPlayer4)
+                {
+                    GameObject padPlayer4;
+                    selectedPadPlayer4 = raycastHit.collider.name;
+
+                    if (selectedPadPlayer4.StartsWith("SelectField4"))
+                    {
+                        padPlayer4 = GameObject.Find(selectedPadPlayer4);
+                        Instantiate(Vangnet, padPlayer4.transform.position, Quaternion.identity);
+                        ObjectSelectedPlayer4 = false;
                     }
                 }
             }

@@ -10,22 +10,10 @@ public class Fade : MonoBehaviour
 
     private void Start()
     {
-        if (name == "FieldsPlayer1")
-        {
-            r_Player1 = GetComponentsInChildren<MeshRenderer>();
-        }
-        if (name == "FieldsPlayer2")
-        {
-            r_Player2 = GetComponentsInChildren<MeshRenderer>();
-        }
-        if (name == "FieldsPlayer3")
-        {
-            r_Player3 = GetComponentsInChildren<MeshRenderer>();
-        }
-        if (name == "FieldsPlayer4")
-        {
-            r_Player4 = GetComponentsInChildren<MeshRenderer>();
-        }
+        r_Player1 = GameObject.Find("FieldsPlayer1").GetComponentsInChildren<MeshRenderer>();
+        r_Player2 = GameObject.Find("FieldsPlayer2").GetComponentsInChildren<MeshRenderer>();
+        r_Player3 = GameObject.Find("FieldsPlayer3").GetComponentsInChildren<MeshRenderer>();
+        r_Player4 = GameObject.Find("FieldsPlayer4").GetComponentsInChildren<MeshRenderer>();
     }
 
     private void Update()
@@ -63,7 +51,6 @@ public class Fade : MonoBehaviour
         {
             foreach (MeshRenderer rend in r_Player2)
             {
-                Debug.LogError("Aleezoh");
                 rend.material.color = new Color(rend.material.color.r, rend.material.color.g, rend.material.color.b, colora);
             }
         }

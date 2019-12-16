@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
     public static int vangnetPrijs = 10;
     public static int beachcleanerPrijs = 20;
     public static int fishingbootPrijs = 50;
-    public static int interceptorPrijs = 75;
-    public static int projectcleanerPrijs = 100;
+    public static int interceptorPrijs = 100;
+    public static int projectcleanerPrijs = 500;
 
     public static int moneyP1;
     public static int moneyP2;

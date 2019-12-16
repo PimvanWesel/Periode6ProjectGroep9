@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 454739170}
   - component: {fileID: 454739169}
   m_Layer: 5
-  m_Name: Text (3)
+  m_Name: GeldP4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -550,7 +550,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Keld
+
+'
 --- !u!222 &454739170
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -566,16 +568,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -512151426964402197, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
-        type: 3}
-      propertyPath: pathCreator
-      value: 
-      objectReference: {fileID: 1254114990}
     - target: {fileID: 113689891762804412, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
         type: 3}
       propertyPath: m_Name
       value: Plastic (3)
       objectReference: {fileID: 0}
+    - target: {fileID: -512151426964402197, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
+        type: 3}
+      propertyPath: pathCreator
+      value: 
+      objectReference: {fileID: 1254114990}
     - target: {fileID: 8429805959215271038, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -645,16 +647,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -512151426964402197, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
-        type: 3}
-      propertyPath: pathCreator
-      value: 
-      objectReference: {fileID: 1836089945}
     - target: {fileID: 113689891762804412, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
         type: 3}
       propertyPath: m_Name
       value: Plastic (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -512151426964402197, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
+        type: 3}
+      propertyPath: pathCreator
+      value: 
+      objectReference: {fileID: 1836089945}
     - target: {fileID: 8429805959215271038, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -812,7 +814,7 @@ GameObject:
   - component: {fileID: 1055997533}
   - component: {fileID: 1055997532}
   m_Layer: 5
-  m_Name: Text
+  m_Name: GeldP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -868,7 +870,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Keld
+
+'
 --- !u!222 &1055997533
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -908,14 +912,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seconds: 0
   round: 0
-  moneyP1: 0
-  moneyP2: 0
-  moneyP3: 0
-  moneyP4: 0
-  amountP1: {fileID: 0}
-  amountP2: {fileID: 0}
-  amountP3: {fileID: 0}
-  amountP4: {fileID: 0}
+  moneyText:
+  - {fileID: 1055997532}
+  - {fileID: 1393622606}
+  - {fileID: 1668923282}
+  - {fileID: 454739169}
   sec: {fileID: 388696143}
   rounds: {fileID: 283360211}
 --- !u!4 &1144391362
@@ -1135,7 +1136,7 @@ GameObject:
   - component: {fileID: 1393622607}
   - component: {fileID: 1393622606}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: GeldP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1191,7 +1192,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Keld
+
+'
 --- !u!222 &1393622607
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1278,7 +1281,7 @@ GameObject:
   - component: {fileID: 1668923283}
   - component: {fileID: 1668923282}
   m_Layer: 5
-  m_Name: Text (2)
+  m_Name: GeldP3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1334,7 +1337,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Keld
+
+'
 --- !u!222 &1668923283
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1350,16 +1355,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -512151426964402197, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
-        type: 3}
-      propertyPath: pathCreator
-      value: 
-      objectReference: {fileID: 6725178}
     - target: {fileID: 113689891762804412, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
         type: 3}
       propertyPath: m_Name
       value: Plastic (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -512151426964402197, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
+        type: 3}
+      propertyPath: pathCreator
+      value: 
+      objectReference: {fileID: 6725178}
     - target: {fileID: 8429805959215271038, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1525,16 +1530,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -512151426964402197, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
-        type: 3}
-      propertyPath: pathCreator
-      value: 
-      objectReference: {fileID: 1750186690}
     - target: {fileID: 113689891762804412, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
         type: 3}
       propertyPath: m_Name
       value: Plastic
       objectReference: {fileID: 0}
+    - target: {fileID: -512151426964402197, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
+        type: 3}
+      propertyPath: pathCreator
+      value: 
+      objectReference: {fileID: 1750186690}
     - target: {fileID: 8429805959215271038, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
         type: 3}
       propertyPath: m_LocalPosition.x

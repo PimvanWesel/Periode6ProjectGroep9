@@ -8,21 +8,30 @@ public class GameManager : MonoBehaviour
     public float seconds;
     public float round;
 
-    public int moneyP1;
-    public int moneyP2;
-    public int moneyP3;
-    public int moneyP4;
+    public static int netPrijs = 10;
+    public static int beachcleanerPrijs = 20;
+    public static int fishingbootPrijs = 50;
+    public static int intercepterPrijs = 75;
+    public static int projectcleanerPrijs = 100;
 
-    public Text amountP1;
-    public Text amountP2;
-    public Text amountP3;
-    public Text amountP4;
+    public static int moneyP1;
+    public static int moneyP2;
+    public static int moneyP3;
+    public static int moneyP4;
+
+    [SerializeField]
+    public Text[] moneyText;
 
     public Text sec;
     public Text rounds;
 
     void Start()
     {
+        moneyP1 = 100;
+        moneyP2 = 100;
+        moneyP3 = 100;
+        moneyP4 = 100;
+
         seconds = 30;
         round = 1;
         sec.text = seconds.ToString();
@@ -42,6 +51,11 @@ public class GameManager : MonoBehaviour
 
         sec.text = "Seconde: " + Mathf.Round(seconds).ToString();
         rounds.text = "Ronde: " + Mathf.Round(round).ToString();
+
+        moneyText[0].text = "Geld: " + moneyP1;
+        moneyText[1].text = "Geld: " + moneyP2;
+        moneyText[2].text = "Geld: " + moneyP3;
+        moneyText[3].text = "Geld: " + moneyP4;
     }
 
     void RestartSeconds()

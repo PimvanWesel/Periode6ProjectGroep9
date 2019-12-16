@@ -27,19 +27,21 @@ public class GameManagerRike : MonoBehaviour
 
     private void Update()
     {
-        //for (int i = 0; i < Input.touchCount; i++)
-        //{
         //foreach (Touch touch in Input.touches)
         //{
-        //    Ray raycast = Camera.main.ScreenPointToRay(Input.touches[i].position);
-        //    RaycastHit raycastHit;
-
-        //    if (phase != TouchPhase.Stationary)
-        //    {
-        if (Input.GetMouseButtonUp(0))
+        ////////////////////////////////////////////////////Input met Touch
+        for (int i = 0; i < Input.touchCount; i++)
         {
-            Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray raycast = Camera.main.ScreenPointToRay(Input.touches[i].position);
             RaycastHit raycastHit;
+
+            //if (phase != TouchPhase.Stationary)
+            //{
+            ////////////////////////////////////////////////////Input met Mouse
+            //if (Input.GetMouseButtonUp(0))
+            //{
+            //    Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //    RaycastHit raycastHit;
 
             if (Physics.Raycast(raycast, out raycastHit))
             {

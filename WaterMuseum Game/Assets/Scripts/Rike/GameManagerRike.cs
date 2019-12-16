@@ -13,7 +13,6 @@ public class GameManagerRike : MonoBehaviour
 
     private TouchPhase phase;
 
-    private bool wheelSelected;
     private bool onPlayer1, onPlayer2, onPlayer3, onPlayer4;
     [HideInInspector] public bool ObjectSelectedPlayer1, ObjectSelectedPlayer2, ObjectSelectedPlayer3, ObjectSelectedPlayer4;
 

@@ -1,21 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PathCreation; 
+using PathCreation;
 
 public class Follower : MonoBehaviour
 {
     public PathCreator pathCreator;
     public float speed = 5;
-    float distanceTravelled;
-    void Start()
+    private float distanceTravelled;
+
+    private void Start()
     {
-        
     }
 
-    void Update()
+    private void Update()
     {
         distanceTravelled += speed * Time.deltaTime;
+        transform.Rotate(0, 2, 0);
         transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
     }
 }

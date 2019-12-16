@@ -394,13 +394,10 @@ public class GameManagerRike : MonoBehaviour
                     {
                         padPlayer4 = GameObject.Find(selectedPadPlayer4);
                         if (ObjectToInstantiate4 == Interceptor && selectedPadPlayer4.EndsWith("1") || selectedPadPlayer4.EndsWith("2") || selectedPadPlayer4.EndsWith("3"))
-                        {
                             Instantiate(ObjectToInstantiate4, padPlayer4.transform.position, new Quaternion(0, -180, 0, 0));
-                        }
                         else
-                        {
                             Instantiate(ObjectToInstantiate4, padPlayer4.transform.position, Quaternion.identity);
-                        }
+
                         ObjectSelectedPlayer4 = false;
                     }
                 }

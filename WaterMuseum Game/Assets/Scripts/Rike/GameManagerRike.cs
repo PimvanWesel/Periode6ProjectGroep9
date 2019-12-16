@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManagerRike : MonoBehaviour
 {
     public static GameManagerRike Instance;
-    [SerializeField] private GameObject Vangnet;
+    [SerializeField] private GameObject Vangnet, BeachCleanup, FishingBoat, Interceptor, ProjectCleanup;
     private GameObject player1, player2, player3, player4;
     private string selectedObjectPlayer1;
     private string selectedPadPlayer1, selectedPadPlayer2, selectedPadPlayer3, selectedPadPlayer4;

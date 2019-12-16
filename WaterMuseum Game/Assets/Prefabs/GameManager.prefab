@@ -44,6 +44,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Vangnet: {fileID: 4448507508413928907, guid: 0912f4c0be166c84d8b75da9b22ecf31, type: 3}
+  BeachCleanup: {fileID: 6189299835794038522, guid: 8eb55987ae7eafd4fbf1d9e66222f3c7,
+    type: 3}
+  FishingBoat: {fileID: 6189299835794038522, guid: de0c1852a0d3aad4d9e407562d90f5cf,
+    type: 3}
+  Interceptor: {fileID: 2157440593000715218, guid: 3668d00f4cd68f34286f430a4a1679cf,
+    type: 3}
+  ProjectCleanup: {fileID: 6189299835794038522, guid: 339fb51889ab49e4582c87cade007ce9,
+    type: 3}
   ObjectSelectedPlayer1: 0
   ObjectSelectedPlayer2: 0
   ObjectSelectedPlayer3: 0

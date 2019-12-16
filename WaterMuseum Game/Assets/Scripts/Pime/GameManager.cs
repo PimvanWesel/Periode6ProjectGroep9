@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour
     public static int moneyP3;
     public static int moneyP4;
 
+    public static int oceanVervuiling = 0;
+    public static GameObject ocean;
+
+    public Text oceanText;
+
     [SerializeField]
     public Text[] moneyText;
 
@@ -56,6 +61,8 @@ public class GameManager : MonoBehaviour
         moneyText[1].text = "Geld: " + moneyP2;
         moneyText[2].text = "Geld: " + moneyP3;
         moneyText[3].text = "Geld: " + moneyP4;
+
+        oceanText.text = "Vervuiling: " + oceanVervuiling;
     }
 
     void RestartSeconds()
@@ -63,4 +70,6 @@ public class GameManager : MonoBehaviour
         seconds = 30;
         round++;
     }
+
+    
 }

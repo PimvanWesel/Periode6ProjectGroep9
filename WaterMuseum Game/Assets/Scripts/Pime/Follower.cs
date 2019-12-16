@@ -18,4 +18,12 @@ public class Follower : MonoBehaviour
         distanceTravelled += speed * Time.deltaTime;
         transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("ocean"))
+        {
+            GameManager.oceanVervuiling = GameManager.oceanVervuiling + 100;
+        }
+    }
 }

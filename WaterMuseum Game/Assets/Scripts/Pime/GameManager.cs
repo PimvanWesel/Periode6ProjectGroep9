@@ -8,10 +8,10 @@ public class GameManager : MonoBehaviour
     public float seconds;
     public float round;
 
-    public static int netPrijs = 10;
+    public static int vangnetPrijs = 10;
     public static int beachcleanerPrijs = 20;
     public static int fishingbootPrijs = 50;
-    public static int intercepterPrijs = 75;
+    public static int interceptorPrijs = 75;
     public static int projectcleanerPrijs = 100;
 
     public static int moneyP1;

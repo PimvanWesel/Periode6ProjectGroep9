@@ -8,9 +8,9 @@ public class GameManager : MonoBehaviour
     public float seconds;
     public float round;
 
-    public static int vangnetPrijs = 10;
-    public static int beachcleanerPrijs = 20;
-    public static int fishingbootPrijs = 50;
+    public static int vangnetPrijs = 25;
+    public static int beachcleanerPrijs = 50;
+    public static int fishingbootPrijs = 70;
     public static int interceptorPrijs = 100;
     public static int projectcleanerPrijs = 500;
 
@@ -61,6 +61,6 @@ public class GameManager : MonoBehaviour
     void RestartSeconds()
     {
         seconds = 30;
-        round++;      
+        round++;
     }
 }

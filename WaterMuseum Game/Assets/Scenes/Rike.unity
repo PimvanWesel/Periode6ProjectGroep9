@@ -199,6 +199,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152649350}
   m_CullTransparentMesh: 0
+--- !u!1 &155248968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 155248971}
+  - component: {fileID: 155248970}
+  - component: {fileID: 155248969}
+  m_Layer: 0
+  m_Name: Ocean
+  m_TagString: ocean
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &155248969
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155248968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &155248970
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155248968}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &155248971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155248968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.2, y: 0.08, z: 59.74}
+  m_LocalScale: {x: 10.23, y: 1, z: 3.1616}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &191727739
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,17 +289,17 @@ MonoBehaviour:
       - {x: 0.09198624, y: 0, z: -0.9955028}
       - {x: -0.0027399063, y: 0, z: 0}
       - {x: -0.33326912, y: 0, z: 3.4736214}
-      - {x: -1.7032253, y: 0, z: 7.9905186}
-      - {x: -1.8973608, y: 0, z: 24.482832}
-      - {x: -1.9830008, y: 0, z: 31.758165}
-      - {x: -0.42060852, y: 0, z: 37.679565}
+      - {x: -0.6832747, y: 0, z: 7.6094913}
+      - {x: -1.4876981, y: 0, z: 24.498356}
+      - {x: -1.8336873, y: 0, z: 31.762398}
+      - {x: -1.1948168, y: 0, z: 37.51413}
       - {x: -1.7936163, y: 0, z: 42.671818}
-      - {x: -4.0941896, y: 0, z: 51.036694}
+      - {x: -2.7941048, y: 0, z: 51.289406}
       - {x: -3.586522, y: 0, z: 53.28769}
       - {x: -4.715354, y: 0, z: 58.164433}
       - {x: -7.3587008, y: 0, z: 69.58414}
-      - {x: -5.8979664, y: 0, z: 76.074104}
-      - {x: -5.8195925, y: 0, z: 82.64768}
+      - {x: -6.029805, y: 0, z: 80.13314}
+      - {x: -5.9514313, y: 0, z: 86.70672}
       isClosed: 0
       space: 2
       controlMode: 0
@@ -293,7 +346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191727739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.744999, y: 0, z: -26.369999}
+  m_LocalPosition: {x: 3.03, y: 0, z: -26.369999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -333,23 +386,23 @@ MonoBehaviour:
       points:
       - {x: -0.57885695, y: 0, z: -1.5393524}
       - {x: 0.42114305, y: 0, z: -1.5393524}
-      - {x: -0.25908753, y: 0, z: 2.8597634}
-      - {x: -0.25238514, y: 0, z: 3.8597412}
-      - {x: -0.22903776, y: 0, z: 7.3430977}
-      - {x: 0.73865557, y: 0, z: 8.861435}
-      - {x: 0.6813841, y: 0, z: 19.341555}
-      - {x: 0.65091676, y: 0, z: 24.916775}
-      - {x: 1.0913441, y: 0, z: 27.223911}
-      - {x: 0.8445692, y: 0, z: 30.490969}
-      - {x: 0.5306263, y: 0, z: 34.647263}
-      - {x: 0.40784597, y: 0, z: 43.09186}
-      - {x: 1.849433, y: 0, z: 48.823097}
-      - {x: 4.7017927, y: 0, z: 60.163063}
+      - {x: 0.43781567, y: 0, z: 2.6249936}
+      - {x: 0.4445181, y: 0, z: 3.6249714}
+      - {x: 0.46786547, y: 0, z: 7.108328}
+      - {x: 0.82276815, y: 0, z: 8.433411}
+      - {x: 1.3311453, y: 0, z: 19.294746}
+      - {x: 1.5785055, y: 0, z: 24.579529}
+      - {x: 1.419471, y: 0, z: 27.219687}
+      - {x: 1.1726961, y: 0, z: 30.486744}
+      - {x: 0.8587532, y: 0, z: 34.643036}
+      - {x: 1.0923281, y: 0, z: 42.966927}
+      - {x: 2.093565, y: 0, z: 48.755295}
+      - {x: 4.086588, y: 0, z: 60.277393}
       - {x: 4.5178146, y: 0, z: 65.28306}
       - {x: 5.5106077, y: 0, z: 71.92113}
       - {x: 6.524287, y: 0, z: 78.69885}
-      - {x: 6.5514765, y: 0, z: 81.345825}
-      - {x: 6.4056597, y: 0, z: 84.788826}
+      - {x: 6.601186, y: 0, z: 85.29145}
+      - {x: 6.455369, y: 0, z: 88.73445}
       isClosed: 0
       space: 2
       controlMode: 0
@@ -593,20 +646,20 @@ MonoBehaviour:
       points:
       - {x: -0.42992973, y: 0, z: -0.33567047}
       - {x: 0.57007027, y: 0, z: 0.16432953}
-      - {x: 0.3733515, y: 0, z: 2.5765836}
-      - {x: 0.23102379, y: 0, z: 3.155529}
-      - {x: -1.6546173, y: 0, z: 10.825737}
-      - {x: -1.5187967, y: -0.0000031835002, z: 13.994825}
-      - {x: -1.3081474, y: -0.0000019073486, z: 21.382086}
-      - {x: -0.993309, y: 0, z: 32.423157}
-      - {x: -1.1096344, y: 0, z: 37.680794}
-      - {x: -0.91234016, y: 0, z: 44.466858}
-      - {x: -0.6426371, y: 0, z: 53.74347}
+      - {x: 0.40342996, y: 0, z: 2.5324993}
+      - {x: 0.4507265, y: 0, z: 3.1268044}
+      - {x: 1.058115, y: 0, z: 10.758945}
+      - {x: -0.22859001, y: 0, z: 14.172312}
+      - {x: -0.6063709, y: 0, z: 21.413286}
+      - {x: -1.1809306, y: 0, z: 32.425945}
+      - {x: 1.2668037, y: 0, z: 37.55316}
+      - {x: -0.50769806, y: 0, z: 44.543053}
+      - {x: -2.79128, y: 0, z: 53.538246}
       - {x: -5.5666714, y: 0, z: 50.72435}
       - {x: -11.251149, y: 0, z: 59.881855}
       - {x: -17.088951, y: 0, z: 69.28636}
-      - {x: -15.482993, y: 0, z: 75.29311}
-      - {x: -15.209873, y: -0.0000019073486, z: 85.082184}
+      - {x: -15.5109415, y: 0.0000019073486, z: 80.16332}
+      - {x: -15.237822, y: 0, z: 89.95239}
       isClosed: 0
       space: 2
       controlMode: 0
@@ -808,6 +861,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 507160146887463447, guid: 65f2bab4a3413fc4b8e3e412b0cd410c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65f2bab4a3413fc4b8e3e412b0cd410c, type: 3}
 --- !u!1 &1324457275
@@ -841,6 +899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seconds: 0
   round: 0
+  oceanText: {fileID: 1961191846}
   moneyText:
   - {fileID: 1709300445}
   - {fileID: 1697883858}
@@ -1273,6 +1332,7 @@ RectTransform:
   - {fileID: 152649351}
   - {fileID: 1697883857}
   - {fileID: 1709300444}
+  - {fileID: 1961191845}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1601,6 +1661,83 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 88, y: 90.00001, z: 0}
+--- !u!1 &1961191844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1961191845}
+  - component: {fileID: 1961191847}
+  - component: {fileID: 1961191846}
+  m_Layer: 5
+  m_Name: Vervuiling
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1961191845
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961191844}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1686179507}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -262.3, y: -924.8}
+  m_SizeDelta: {x: 1379.5, y: 230.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1961191846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961191844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 150
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: fghjk
+--- !u!222 &1961191847
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961191844}
+  m_CullTransparentMesh: 0
 --- !u!1 &2139825853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,19 +1770,19 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -0.15641594, y: 0, z: -0.0036849976}
-      - {x: 0.84358406, y: 0, z: 0.496315}
-      - {x: 1.0968243, y: 0, z: 22.595236}
-      - {x: 1.0386486, y: 0, z: 24.071087}
-      - {x: 0.5881767, y: 0, z: 35.499046}
-      - {x: -0.4291935, y: 0, z: 34.77676}
+      - {x: -0.12427902, y: 0, z: -2.5025005}
+      - {x: 0.875721, y: 0, z: -2.0025005}
+      - {x: 1.5869689, y: 0, z: 22.494379}
+      - {x: 1.5877991, y: 0, z: 23.97138}
+      - {x: 1.5941181, y: 0, z: 35.214417}
+      - {x: 0.06731033, y: 0, z: 34.866188}
       - {x: 1.6717682, y: 0, z: 44.4934}
-      - {x: 3.253653, y: 0, z: 51.809387}
+      - {x: 2.9022458, y: 0, z: 51.87662}
       - {x: 11.3497305, y: 0, z: 52.75795}
       - {x: 13.6644, y: 0, z: 60.831028}
       - {x: 17.002888, y: 0, z: 72.47497}
-      - {x: 16.74908, y: 0, z: 74.37962}
-      - {x: 17.25697, y: 0, z: 84.05224}
+      - {x: 16.750006, y: 0, z: 78.50391}
+      - {x: 17.257895, y: 0, z: 88.17652}
       isClosed: 0
       space: 2
       controlMode: 0

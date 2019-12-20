@@ -9,8 +9,12 @@ public class Follower : MonoBehaviour
     public float speed = 5;
     private float distanceTravelled;
 
+    private Vector3 _BoxSize;
+    private Vector3 _BoxOfset;
+
     private void Start()
     {
+        _BoxSize = transform.localScale;
     }
 
     private void Update()
@@ -18,13 +22,20 @@ public class Follower : MonoBehaviour
         distanceTravelled += speed * Time.deltaTime;
         transform.Rotate(0, 2, 0);
         transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
+
+        CollisionCheck();
     }
-    private void OnCollisionEnter(Collision collision)
+
+    private void CollisionCheck()
     {
-        if (collision.collider.CompareTag("ocean"))
+        Collider[] Colliders = Physics.OverlapBox(transform.position + _BoxOfset, _BoxSize);
+        for (int i = 0; i < Colliders.Length; i++)
         {
-            GameManager.oceanVervuiling = GameManager.oceanVervuiling + 100;
+            if (Colliders[i].CompareTag("ocean"))
+            {
+                GameManager.oceanVervuiling = GameManager.oceanVervuiling + 100;
+                Destroy(gameObject);
+            }
         }
     }
 }
-

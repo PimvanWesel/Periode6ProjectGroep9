@@ -13,17 +13,18 @@ public class Wavespawner : MonoBehaviour
     public float timeBetweenWaves = 5f;
     public float countdown = 2f;
 
-    private int waveIndex = 0;
-
-
-
-    void Start()
-    {
-        
-    }
+    private int waveIndex = 0; 
 
     void Update()
     {
-        
+        if (enemiesAlive > 0)
+        {
+            return;
+        }
+
+        if (countdown <= 0f)
+        {
+            StartCoroutine()
+        }
     }
 }

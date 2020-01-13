@@ -29,14 +29,14 @@ public class GameManagerRike : MonoBehaviour
     {
         //foreach (Touch touch in Input.touches)
         //{
-        ////////////////////////////////////////////////////Input met Touch
+        //////////////////////////////////////////////////Input met Touch
         //for (int i = 0; i < Input.touchCount; i++)
         //{
         //    Ray raycast = Camera.main.ScreenPointToRay(Input.touches[i].position);
         //    RaycastHit raycastHit;
 
-        //if (phase != TouchPhase.Stationary)
-        //{
+        //    if (phase != TouchPhase.Stationary)
+        //    {
         ////////////////////////////////////////////////////Input met Mouse
         if (Input.GetMouseButtonUp(0))
         {
@@ -132,6 +132,7 @@ public class GameManagerRike : MonoBehaviour
                             Instantiate(ObjectToInstantiate1, padPlayer1.transform.position, Quaternion.identity);
                         }
                         ObjectSelectedPlayer1 = false;
+                        ObjectToInstantiate1.name = ObjectToInstantiate1.name + "Player1";
                     }
                 }
 
@@ -212,6 +213,8 @@ public class GameManagerRike : MonoBehaviour
 
                     if (selectedPadPlayer2.StartsWith("SelectField2"))
                     {
+                        ObjectToInstantiate2.name = ObjectToInstantiate2.name + "Player2";
+
                         padPlayer2 = GameObject.Find(selectedPadPlayer2);
                         if (ObjectToInstantiate2 == Interceptor && selectedPadPlayer2.EndsWith("1") || selectedPadPlayer2.EndsWith("2"))
                         {
@@ -302,6 +305,8 @@ public class GameManagerRike : MonoBehaviour
 
                     if (selectedPadPlayer3.StartsWith("SelectField3"))
                     {
+                        ObjectToInstantiate3.name = ObjectToInstantiate3.name + "Player3";
+
                         padPlayer3 = GameObject.Find(selectedPadPlayer3);
                         if (ObjectToInstantiate3 == Interceptor && selectedPadPlayer3.EndsWith("1") || selectedPadPlayer3.EndsWith("2") || selectedPadPlayer3.EndsWith("3"))
                         {
@@ -392,6 +397,8 @@ public class GameManagerRike : MonoBehaviour
 
                     if (selectedPadPlayer4.StartsWith("SelectField4"))
                     {
+                        ObjectToInstantiate4.name = ObjectToInstantiate4.name + "Player4";
+
                         padPlayer4 = GameObject.Find(selectedPadPlayer4);
                         if (ObjectToInstantiate4 == Interceptor && selectedPadPlayer4.EndsWith("1") || selectedPadPlayer4.EndsWith("2") || selectedPadPlayer4.EndsWith("3"))
                             Instantiate(ObjectToInstantiate4, padPlayer4.transform.position, new Quaternion(0, -180, 0, 0));

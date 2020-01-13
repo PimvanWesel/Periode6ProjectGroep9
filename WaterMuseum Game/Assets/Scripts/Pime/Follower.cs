@@ -36,6 +36,11 @@ public class Follower : MonoBehaviour
                 GameManager.oceanVervuiling = GameManager.oceanVervuiling + 100;
                 Destroy(gameObject);
             }
+
+            if (Colliders[i].CompareTag("VangNet"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -6,16 +6,20 @@ public class Wavespawner : MonoBehaviour
 {
     public static int enemiesAlive = 0;
 
-    public Wave[] waves;
+    //public Wave[] waves;
 
     public Transform spawnpoint;
 
     public float timeBetweenWaves = 5f;
     public float countdown = 2f;
 
-    private int waveIndex = 0; 
+    private int waveIndex = 0;
 
-    void Update()
+    private void Start()
+    {
+    }
+
+    private void Update()
     {
         if (enemiesAlive > 0)
         {
@@ -24,7 +28,6 @@ public class Wavespawner : MonoBehaviour
 
         if (countdown <= 0f)
         {
-            StartCoroutine()
         }
     }
 }

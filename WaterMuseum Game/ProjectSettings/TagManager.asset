@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Player 1
   - ocean
+  - VangNet
   layers:
   - Default
   - TransparentFX

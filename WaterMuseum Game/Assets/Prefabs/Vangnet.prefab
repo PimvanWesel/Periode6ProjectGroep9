@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 388206794166271924}
   m_Layer: 0
   m_Name: Vangnet
-  m_TagString: Untagged
+  m_TagString: VangNet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

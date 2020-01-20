@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3877981031736992379}
+  - component: {fileID: 900678002512348830}
   m_Layer: 0
-  m_Name: Beach Cleanup 1
-  m_TagString: Untagged
+  m_Name: Beach Cleanup
+  m_TagString: Deployable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,6 +37,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &900678002512348830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612826045865913123}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7687378, y: 2.21, z: 6.201416}
+  m_Center: {x: 0.32289124, y: 1.1300001, z: 0.7234459}
 --- !u!1001 &264429640896604208
 PrefabInstance:
   m_ObjectHideFlags: 0

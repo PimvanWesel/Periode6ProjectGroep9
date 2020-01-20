@@ -69,8 +69,13 @@ public class Follower : MonoBehaviour
         {
             foreach (GameObject pPads in PadsPlayer3)
             {
-                if (Vector3.Distance(transform.position, pPads.transform.position) < 5)
+                if (Vector3.Distance(transform.position, pPads.transform.position) < 20)
                 {
+                    transform.position = Vector3.MoveTowards(transform.position, pPads.transform.position, 0.08f);
+                }
+                else
+                {
+                    transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
                 }
             }
         }
@@ -79,8 +84,13 @@ public class Follower : MonoBehaviour
         {
             foreach (GameObject pPads in PadsPlayer4)
             {
-                if (Vector3.Distance(transform.position, pPads.transform.position) < 5)
+                if (Vector3.Distance(transform.position, pPads.transform.position) < 20)
                 {
+                    transform.position = Vector3.MoveTowards(transform.position, pPads.transform.position, 0.08f);
+                }
+                else
+                {
+                    transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
                 }
             }
         }
@@ -102,6 +112,39 @@ public class Follower : MonoBehaviour
             if (Colliders[i].CompareTag("VangNet"))
             {
                 Destroy(gameObject);
+            }
+
+            if (tag == "PlasticPlayer1")
+            {
+                if (Colliders[i].CompareTag("Deployable"))
+                {
+                    Destroy(gameObject);
+                    GameManager.moneyP1 += 10;
+                }
+            }
+            if (tag == "PlasticPlayer2")
+            {
+                if (Colliders[i].CompareTag("Deployable"))
+                {
+                    Destroy(gameObject);
+                    GameManager.moneyP2 += 10;
+                }
+            }
+            if (tag == "PlasticPlayer3")
+            {
+                if (Colliders[i].CompareTag("Deployable"))
+                {
+                    Destroy(gameObject);
+                    GameManager.moneyP3 += 10;
+                }
+            }
+            if (tag == "PlasticPlayer4")
+            {
+                if (Colliders[i].CompareTag("Deployable"))
+                {
+                    Destroy(gameObject);
+                    GameManager.moneyP4 += 10;
+                }
             }
         }
     }

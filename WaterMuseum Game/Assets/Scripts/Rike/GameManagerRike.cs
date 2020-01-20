@@ -14,6 +14,7 @@ public class GameManagerRike : MonoBehaviour
 
     private bool onPlayer1, onPlayer2, onPlayer3, onPlayer4;
     [HideInInspector] public bool ObjectSelectedPlayer1, ObjectSelectedPlayer2, ObjectSelectedPlayer3, ObjectSelectedPlayer4;
+    public Transform projectSSpawn;
 
     private void Start()
     {
@@ -96,9 +97,8 @@ public class GameManagerRike : MonoBehaviour
                 {
                     if (GameManager.moneyP1 >= GameManager.interceptorPrijs)
                     {
-                        ObjectSelectedPlayer1 = true;
                         player1.transform.GetChild(0).gameObject.SetActive(false);
-                        ObjectToInstantiate1 = Interceptor;
+                        Instantiate(ProjectCleanup, projectSSpawn.position, projectSSpawn.rotation);
                         onPlayer1 = false;
                         GameManager.moneyP1 = GameManager.moneyP1 - GameManager.interceptorPrijs;
                     }
@@ -197,9 +197,9 @@ public class GameManagerRike : MonoBehaviour
                 {
                     if (GameManager.moneyP2 >= GameManager.projectcleanerPrijs)
                     {
-                        ObjectSelectedPlayer2 = true;
                         player2.transform.GetChild(0).gameObject.SetActive(false);
                         ObjectToInstantiate2 = ProjectCleanup;
+                        Instantiate(ProjectCleanup, projectSSpawn.position, projectSSpawn.rotation);
                         onPlayer2 = false;
                         GameManager.moneyP2 = GameManager.moneyP2 - GameManager.projectcleanerPrijs;
                     }
@@ -276,9 +276,8 @@ public class GameManagerRike : MonoBehaviour
                 {
                     if (GameManager.moneyP3 >= GameManager.interceptorPrijs)
                     {
-                        ObjectSelectedPlayer3 = true;
                         player3.transform.GetChild(0).gameObject.SetActive(false);
-                        ObjectToInstantiate3 = Interceptor;
+                        Instantiate(ProjectCleanup, projectSSpawn.position, projectSSpawn.rotation);
                         onPlayer3 = false;
                         GameManager.moneyP3 = GameManager.moneyP3 - GameManager.interceptorPrijs;
                     }
@@ -366,9 +365,8 @@ public class GameManagerRike : MonoBehaviour
                 {
                     if (GameManager.moneyP4 >= GameManager.interceptorPrijs)
                     {
-                        ObjectSelectedPlayer4 = true;
                         player4.transform.GetChild(0).gameObject.SetActive(false);
-                        ObjectToInstantiate4 = Interceptor;
+                        Instantiate(ProjectCleanup, projectSSpawn.position, projectSSpawn.rotation);
                         onPlayer4 = false;
                         GameManager.moneyP4 = GameManager.moneyP4 - GameManager.interceptorPrijs;
                     }

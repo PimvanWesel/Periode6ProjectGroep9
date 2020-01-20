@@ -15,6 +15,7 @@ TagManager:
   - PadPlayer2
   - PadPlayer3
   - PadPlayer4
+  - Deployable
   layers:
   - Default
   - TransparentFX

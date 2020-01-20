@@ -9,12 +9,7 @@ public class Follower : MonoBehaviour
     public float speed = 5;
     private float distanceTravelled;
 
-    public GameObject[] PadsPlayer1;
-    public GameObject[] PadsPlayer2;
-    public GameObject[] PadsPlayer3;
-    public GameObject[] PadsPlayer4;
-
-    private int chanceOfStranding;
+    public GameObject[] PadsPlayer1, PadsPlayer2, PadsPlayer3, PadsPlayer4;
 
     private Vector3 _BoxSize;
     private Vector3 _BoxOfset;
@@ -22,7 +17,6 @@ public class Follower : MonoBehaviour
     private void Start()
     {
         _BoxSize = transform.localScale;
-        chanceOfStranding = Random.Range(0, 3);
 
         PadsPlayer1 = GameObject.FindGameObjectsWithTag("PadPlayer1");
         PadsPlayer2 = GameObject.FindGameObjectsWithTag("PadPlayer2");
@@ -69,8 +63,13 @@ public class Follower : MonoBehaviour
         {
             foreach (GameObject pPads in PadsPlayer3)
             {
-                if (Vector3.Distance(transform.position, pPads.transform.position) < 5)
+                if (Vector3.Distance(transform.position, pPads.transform.position) < 20)
                 {
+                    transform.position = Vector3.MoveTowards(transform.position, pPads.transform.position, 0.08f);
+                }
+                else
+                {
+                    transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
                 }
             }
         }
@@ -79,8 +78,13 @@ public class Follower : MonoBehaviour
         {
             foreach (GameObject pPads in PadsPlayer4)
             {
-                if (Vector3.Distance(transform.position, pPads.transform.position) < 5)
+                if (Vector3.Distance(transform.position, pPads.transform.position) < 20)
                 {
+                    transform.position = Vector3.MoveTowards(transform.position, pPads.transform.position, 0.08f);
+                }
+                else
+                {
+                    transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
                 }
             }
         }
@@ -102,6 +106,39 @@ public class Follower : MonoBehaviour
             if (Colliders[i].CompareTag("VangNet"))
             {
                 Destroy(gameObject);
+            }
+
+            if (tag == "PlasticPlayer1")
+            {
+                if (Colliders[i].CompareTag("Deployable"))
+                {
+                    Destroy(gameObject);
+                    GameManager.moneyP1 += 10;
+                }
+            }
+            if (tag == "PlasticPlayer2")
+            {
+                if (Colliders[i].CompareTag("Deployable"))
+                {
+                    Destroy(gameObject);
+                    GameManager.moneyP2 += 10;
+                }
+            }
+            if (tag == "PlasticPlayer3")
+            {
+                if (Colliders[i].CompareTag("Deployable"))
+                {
+                    Destroy(gameObject);
+                    GameManager.moneyP3 += 10;
+                }
+            }
+            if (tag == "PlasticPlayer4")
+            {
+                if (Colliders[i].CompareTag("Deployable"))
+                {
+                    Destroy(gameObject);
+                    GameManager.moneyP4 += 10;
+                }
             }
         }
     }

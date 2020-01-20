@@ -9,12 +9,7 @@ public class Follower : MonoBehaviour
     public float speed = 5;
     private float distanceTravelled;
 
-    public GameObject[] PadsPlayer1;
-    public GameObject[] PadsPlayer2;
-    public GameObject[] PadsPlayer3;
-    public GameObject[] PadsPlayer4;
-
-    private int chanceOfStranding;
+    public GameObject[] PadsPlayer1, PadsPlayer2, PadsPlayer3, PadsPlayer4;
 
     private Vector3 _BoxSize;
     private Vector3 _BoxOfset;
@@ -22,7 +17,6 @@ public class Follower : MonoBehaviour
     private void Start()
     {
         _BoxSize = transform.localScale;
-        chanceOfStranding = Random.Range(0, 3);
 
         PadsPlayer1 = GameObject.FindGameObjectsWithTag("PadPlayer1");
         PadsPlayer2 = GameObject.FindGameObjectsWithTag("PadPlayer2");

@@ -6,6 +6,15 @@ TagManager:
   tags:
   - Player 1
   - ocean
+  - VangNet
+  - PlasticPlayer1
+  - PlasticPlayer2
+  - PlasticPlayer3
+  - PlasticPlayer4
+  - PadPlayer1
+  - PadPlayer2
+  - PadPlayer3
+  - PadPlayer4
   layers:
   - Default
   - TransparentFX
@@ -15,7 +24,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Post Proseccing
   - 
   - 
   - 

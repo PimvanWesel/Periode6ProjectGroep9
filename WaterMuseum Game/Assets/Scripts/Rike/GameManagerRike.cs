@@ -8,7 +8,6 @@ public class GameManagerRike : MonoBehaviour
     [SerializeField] private GameObject Vangnet, BeachCleanup, FishingBoat, Interceptor, ProjectCleanup;
     private GameObject player1, player2, player3, player4;
     private GameObject ObjectToInstantiate1, ObjectToInstantiate2, ObjectToInstantiate3, ObjectToInstantiate4;
-    private string selectedObjectPlayer1;
     private string selectedPadPlayer1, selectedPadPlayer2, selectedPadPlayer3, selectedPadPlayer4;
 
     private TouchPhase phase;
@@ -29,14 +28,14 @@ public class GameManagerRike : MonoBehaviour
     {
         //foreach (Touch touch in Input.touches)
         //{
-        ////////////////////////////////////////////////////Input met Touch
+        //////////////////////////////////////////////////Input met Touch
         //for (int i = 0; i < Input.touchCount; i++)
         //{
         //    Ray raycast = Camera.main.ScreenPointToRay(Input.touches[i].position);
         //    RaycastHit raycastHit;
 
-        //if (phase != TouchPhase.Stationary)
-        //{
+        ////    if (phase != TouchPhase.Stationary)
+        ////    {
         ////////////////////////////////////////////////////Input met Mouse
         if (Input.GetMouseButtonUp(0))
         {

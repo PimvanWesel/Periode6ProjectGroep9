@@ -4,30 +4,121 @@ using UnityEngine;
 
 public class Wavespawner : MonoBehaviour
 {
-    public static int enemiesAlive = 0;
+    public enum SpawnState { SPAWNING, WAINTING, COUNTING}
 
-    //public Wave[] waves;
+    [System.Serializable]
+    public class Wave
+    {
+        public string name;
+        public Transform plastic;
+        public int count;
+        public float rate;
+    }
 
-    public Transform spawnpoint;
+    public Wave[] waves;
+    private int nextWave = 0;
+
+    public Transform[] spawnPoints;
 
     public float timeBetweenWaves = 5f;
-    public float countdown = 2f;
+    private float waveCountdown;
 
-    private int waveIndex = 0;
+    private float searchCountDown = 1f;
+
+    private SpawnState state = SpawnState.COUNTING;
 
     private void Start()
     {
+        if (spawnPoints.Length == 0)
+        {
+            Debug.LogError("Geen spawnpunten toegewezen");
+        }
+
+        waveCountdown = timeBetweenWaves;
     }
 
     private void Update()
     {
-        if (enemiesAlive > 0)
+        if (state == SpawnState.WAINTING)
         {
-            return;
+            if (!PlasticIsAlive())
+            {
+                WaveCompleted();
+            }
+            else
+            {
+                return;
+            }
         }
 
-        if (countdown <= 0f)
+        if (waveCountdown <= 0)
         {
+            if (state != SpawnState.SPAWNING)
+            {
+                StartCoroutine(SpawnWave(waves[nextWave]));
+            }
         }
+        else
+        {
+            waveCountdown -= Time.deltaTime;
+        }
+    }
+
+    void WaveCompleted()
+    {
+        Debug.Log("Wave completed");
+
+        state = SpawnState.COUNTING;
+        waveCountdown = timeBetweenWaves;
+
+        if (nextWave + 1 > waves.Length -1)
+        {
+            nextWave = 0;
+            Debug.Log("Waves voltooit");
+        }
+        else
+        {
+            nextWave++;
+        }
+
+        nextWave++;
+    }
+
+    bool PlasticIsAlive()
+    {
+        searchCountDown -= Time.deltaTime;
+        if (searchCountDown <= 0)
+        {
+            searchCountDown = 1f;
+            if (GameObject.FindGameObjectsWithTag("Plastic") == null)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    IEnumerator SpawnWave(Wave _wave)
+    {
+        Debug.Log("Spawning wave: " + _wave.name);
+        state = SpawnState.SPAWNING;
+
+        for (int i = 0; i < _wave.count; i++)
+        {
+            SpawnPlastic(_wave.plastic);
+            yield return new WaitForSeconds(1f / _wave.rate);
+        }
+
+        state = SpawnState.WAINTING;
+
+        yield break;
+    }
+
+    void SpawnPlastic(Transform _enemy)
+    {
+        Debug.Log("Spawning plastic: " + _enemy.name);
+
+        Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Instantiate(_enemy, transform.position, transform.rotation);
     }
 }

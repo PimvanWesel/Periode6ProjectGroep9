@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class GameManagerRike : MonoBehaviour
@@ -9,6 +10,7 @@ public class GameManagerRike : MonoBehaviour
     private GameObject player1, player2, player3, player4;
     private GameObject ObjectToInstantiate1, ObjectToInstantiate2, ObjectToInstantiate3, ObjectToInstantiate4;
     private string selectedPadPlayer1, selectedPadPlayer2, selectedPadPlayer3, selectedPadPlayer4;
+    public Image imageBar;
 
     private TouchPhase phase;
 
@@ -27,6 +29,7 @@ public class GameManagerRike : MonoBehaviour
 
     private void Update()
     {
+        imageBar.rectTransform.localScale = new Vector3(GameManager.oceanVervuiling * 0.08f, imageBar.rectTransform.localScale.y, imageBar.rectTransform.localScale.z);
         //foreach (Touch touch in Input.touches)
         //{
         //////////////////////////////////////////////////Input met Touch

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Wavespawner : MonoBehaviour
 {
-    public enum SpawnState { SPAWNING, WAINTING, COUNTING}
+    public enum SpawnState { SPAWNING, WAINTING, COUNTING }
 
     [System.Serializable]
     public class Wave
     {
         public string name;
-        public Transform plastic;
+        public GameObject plastic1, plastic2, plastic3, plastic4;
         public int count;
         public float rate;
     }
@@ -64,14 +64,14 @@ public class Wavespawner : MonoBehaviour
         }
     }
 
-    void WaveCompleted()
+    private void WaveCompleted()
     {
         Debug.Log("Wave completed");
 
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
 
-        if (nextWave + 1 > waves.Length -1)
+        if (nextWave + 1 > waves.Length - 1)
         {
             nextWave = 0;
             Debug.Log("Waves voltooit");
@@ -84,7 +84,7 @@ public class Wavespawner : MonoBehaviour
         nextWave++;
     }
 
-    bool PlasticIsAlive()
+    private bool PlasticIsAlive()
     {
         searchCountDown -= Time.deltaTime;
         if (searchCountDown <= 0)
@@ -98,14 +98,17 @@ public class Wavespawner : MonoBehaviour
         return true;
     }
 
-    IEnumerator SpawnWave(Wave _wave)
+    private IEnumerator SpawnWave(Wave _wave)
     {
         Debug.Log("Spawning wave: " + _wave.name);
         state = SpawnState.SPAWNING;
 
         for (int i = 0; i < _wave.count; i++)
         {
-            SpawnPlastic(_wave.plastic);
+            SpawnPlastic(_wave.plastic1);
+            SpawnPlastic(_wave.plastic2);
+            SpawnPlastic(_wave.plastic3);
+            SpawnPlastic(_wave.plastic4);
             yield return new WaitForSeconds(1f / _wave.rate);
         }
 
@@ -114,7 +117,7 @@ public class Wavespawner : MonoBehaviour
         yield break;
     }
 
-    void SpawnPlastic(Transform _enemy)
+    private void SpawnPlastic(GameObject _enemy)
     {
         Debug.Log("Spawning plastic: " + _enemy.name);
 

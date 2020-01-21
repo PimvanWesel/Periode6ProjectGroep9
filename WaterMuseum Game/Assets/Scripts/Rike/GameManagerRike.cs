@@ -100,8 +100,9 @@ public class GameManagerRike : MonoBehaviour
                 {
                     if (GameManager.moneyP1 >= GameManager.interceptorPrijs)
                     {
+                        ObjectSelectedPlayer1 = true;
+                        ObjectToInstantiate1 = Interceptor;
                         player1.transform.GetChild(0).gameObject.SetActive(false);
-                        Instantiate(ProjectCleanup, projectSSpawn.position, projectSSpawn.rotation);
                         onPlayer1 = false;
                         GameManager.moneyP1 = GameManager.moneyP1 - GameManager.interceptorPrijs;
                     }
@@ -110,9 +111,8 @@ public class GameManagerRike : MonoBehaviour
                 {
                     if (GameManager.moneyP1 >= GameManager.projectcleanerPrijs)
                     {
-                        ObjectSelectedPlayer1 = true;
                         player1.transform.GetChild(0).gameObject.SetActive(false);
-                        ObjectToInstantiate1 = ProjectCleanup;
+                        Instantiate(ProjectCleanup, projectSSpawn.position, projectSSpawn.rotation);
                         onPlayer1 = false;
                         GameManager.moneyP1 = GameManager.moneyP1 - GameManager.projectcleanerPrijs;
                     }
@@ -279,8 +279,9 @@ public class GameManagerRike : MonoBehaviour
                 {
                     if (GameManager.moneyP3 >= GameManager.interceptorPrijs)
                     {
+                        ObjectSelectedPlayer3 = true;
                         player3.transform.GetChild(0).gameObject.SetActive(false);
-                        Instantiate(ProjectCleanup, projectSSpawn.position, projectSSpawn.rotation);
+                        ObjectToInstantiate3 = Interceptor;
                         onPlayer3 = false;
                         GameManager.moneyP3 = GameManager.moneyP3 - GameManager.interceptorPrijs;
                     }
@@ -289,9 +290,8 @@ public class GameManagerRike : MonoBehaviour
                 {
                     if (GameManager.moneyP3 >= GameManager.projectcleanerPrijs)
                     {
-                        ObjectSelectedPlayer3 = true;
                         player3.transform.GetChild(0).gameObject.SetActive(false);
-                        ObjectToInstantiate3 = ProjectCleanup;
+                        Instantiate(ProjectCleanup, projectSSpawn.position, projectSSpawn.rotation);
                         onPlayer3 = false;
                         GameManager.moneyP3 = GameManager.moneyP3 - GameManager.projectcleanerPrijs;
                     }
@@ -368,8 +368,9 @@ public class GameManagerRike : MonoBehaviour
                 {
                     if (GameManager.moneyP4 >= GameManager.interceptorPrijs)
                     {
+                        ObjectSelectedPlayer4 = true;
                         player4.transform.GetChild(0).gameObject.SetActive(false);
-                        Instantiate(ProjectCleanup, projectSSpawn.position, projectSSpawn.rotation);
+                        ObjectToInstantiate4 = Interceptor;
                         onPlayer4 = false;
                         GameManager.moneyP4 = GameManager.moneyP4 - GameManager.interceptorPrijs;
                     }
@@ -378,10 +379,9 @@ public class GameManagerRike : MonoBehaviour
                 {
                     if (GameManager.moneyP4 >= GameManager.projectcleanerPrijs)
                     {
-                        ObjectSelectedPlayer4 = true;
                         player4.transform.GetChild(0).gameObject.SetActive(false);
-                        ObjectToInstantiate4 = ProjectCleanup;
                         onPlayer4 = false;
+                        Instantiate(ProjectCleanup, projectSSpawn.position, projectSSpawn.rotation);
                         GameManager.moneyP4 = GameManager.moneyP4 - GameManager.projectcleanerPrijs;
                     }
                 }

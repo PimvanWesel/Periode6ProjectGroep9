@@ -90,10 +90,6 @@ public class Wavespawner : MonoBehaviour
         if (searchCountDown <= 0)
         {
             searchCountDown = 1f;
-            if (GameObject.FindGameObjectsWithTag("Plastic") == null)
-            {
-                return false;
-            }
         }
         return true;
     }
